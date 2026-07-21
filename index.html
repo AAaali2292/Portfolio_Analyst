@@ -783,6 +783,54 @@
         gap: 20px;
       }
     }
+  
+    /* =========================
+       PORTFOLIO VISUALS
+    ========================= */
+    .project-chart {
+      margin: 26px 0 4px;
+      padding: 18px;
+      border: 1px solid rgba(191, 157, 92, 0.18);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+      overflow: hidden;
+    }
+    .chart-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+    .chart-heading h4 { margin: 0; font-size: 0.96rem; letter-spacing: -0.01em; }
+    .chart-kicker {
+      display: block; margin-bottom: 4px; color: var(--accent);
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .chart-badge {
+      flex: 0 0 auto; padding: 6px 9px; border: 1px solid rgba(191,157,92,0.22);
+      border-radius: 999px; color: rgba(255,255,255,0.62); font-size: 0.68rem; white-space: nowrap;
+    }
+    .chart-svg { display: block; width: 100%; height: auto; min-height: 210px; }
+    .chart-grid { stroke: rgba(255,255,255,0.08); stroke-width: 1; }
+    .chart-axis { fill: rgba(255,255,255,0.38); font-size: 10px; font-family: inherit; }
+    .chart-label { fill: rgba(255,255,255,0.62); font-size: 10px; font-family: inherit; }
+    .chart-line { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .chart-line-secondary { fill: none; stroke: rgba(255,255,255,0.42); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 5 5; }
+    .chart-threshold { stroke: rgba(255,255,255,0.45); stroke-width: 1.5; stroke-dasharray: 6 5; }
+    .chart-area { fill: rgba(197,165,106,0.10); }
+    .chart-confidence { fill: rgba(197,165,106,0.12); }
+    .chart-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+    .chart-callout { fill: rgba(7,16,13,0.94); stroke: rgba(197,165,106,0.35); stroke-width: 1; }
+    .chart-callout-text { fill: rgba(255,255,255,0.78); font-size: 10px; font-family: inherit; }
+    .chart-footnote { margin: 8px 0 0; color: rgba(255,255,255,0.48); font-size: 0.72rem; line-height: 1.55; }
+    @media (max-width: 600px) {
+      .project-chart { padding: 14px; }
+      .chart-heading { flex-direction: column; gap: 8px; }
+      .chart-badge { align-self: flex-start; }
+      .chart-svg { min-height: 180px; }
+    }
+
   </style>
 </head>
 
@@ -1127,6 +1175,38 @@
           from the green premium.
         </p>
 
+        
+          <div class="project-chart">
+            <div class="chart-heading">
+              <div>
+                <span class="chart-kicker">Market signal</span>
+                <h4>Physical supply anomaly gap</h4>
+              </div>
+              <span class="chart-badge">20% monitoring threshold</span>
+            </div>
+            <svg class="chart-svg" viewBox="0 0 760 285" role="img" aria-label="Illustrative quarterly anomaly gap with a 20 percent monitoring threshold">
+              <line class="chart-grid" x1="58" y1="48" x2="720" y2="48"/>
+              <line class="chart-grid" x1="58" y1="105" x2="720" y2="105"/>
+              <line class="chart-grid" x1="58" y1="162" x2="720" y2="162"/>
+              <line class="chart-grid" x1="58" y1="219" x2="720" y2="219"/>
+              <line class="chart-threshold" x1="58" y1="105" x2="720" y2="105"/>
+              <text class="chart-label" x="600" y="98">20% threshold</text>
+              <path class="chart-area" d="M58 204 L87 199 L116 205 L145 193 L174 190 L203 182 L232 188 L261 178 L290 171 L319 176 L348 160 L377 166 L406 151 L435 143 L464 133 L493 121 L522 113 L551 91 L580 78 L609 68 L638 56 L667 45 L696 37 L720 31 L720 219 L58 219 Z"/>
+              <path class="chart-line" d="M58 204 L87 199 L116 205 L145 193 L174 190 L203 182 L232 188 L261 178 L290 171 L319 176 L348 160 L377 166 L406 151 L435 143 L464 133 L493 121 L522 113 L551 91 L580 78 L609 68 L638 56 L667 45 L696 37 L720 31"/>
+              <circle class="chart-dot" cx="551" cy="91" r="5"/>
+              <rect class="chart-callout" x="492" y="50" width="130" height="34" rx="7"/>
+              <text class="chart-callout-text" x="504" y="65">Signal crosses</text>
+              <text class="chart-callout-text" x="504" y="77">monitoring threshold</text>
+              <text class="chart-axis" x="52" y="235">22Q1</text><text class="chart-axis" x="165" y="235">22Q4</text>
+              <text class="chart-axis" x="278" y="235">23Q3</text><text class="chart-axis" x="391" y="235">24Q2</text>
+              <text class="chart-axis" x="504" y="235">24Q4</text><text class="chart-axis" x="617" y="235">25Q3</text>
+              <text class="chart-axis" x="693" y="235">26Q2</text>
+              <text class="chart-axis" x="16" y="52">30%</text><text class="chart-axis" x="16" y="109">20%</text>
+              <text class="chart-axis" x="16" y="166">10%</text><text class="chart-axis" x="28" y="223">0%</text>
+            </svg>
+            <p class="chart-footnote">Illustrative visual based on the methodology described in the case study; underlying commercial and paid data are confidential.</p>
+          </div>
+
         <div class="project-result">
 
           <strong>Key insight</strong>
@@ -1291,6 +1371,37 @@
           intervals were explicitly communicated and the need for additional
           research was highlighted before extending the model further.
         </p>
+
+        
+          <div class="project-chart">
+            <div class="chart-heading">
+              <div>
+                <span class="chart-kicker">Forecasting</span>
+                <h4>Cotton basis — seasonal forecast</h4>
+              </div>
+              <span class="chart-badge">SARIMA(1,1,1)(1,1,1,12)</span>
+            </div>
+            <svg class="chart-svg" viewBox="0 0 760 285" role="img" aria-label="Illustrative cotton basis historical series with seasonal forecast and confidence interval">
+              <line class="chart-grid" x1="58" y1="48" x2="720" y2="48"/>
+              <line class="chart-grid" x1="58" y1="105" x2="720" y2="105"/>
+              <line class="chart-grid" x1="58" y1="162" x2="720" y2="162"/>
+              <line class="chart-grid" x1="58" y1="219" x2="720" y2="219"/>
+              <path class="chart-confidence" d="M450 118 L478 112 L506 108 L534 101 L562 94 L590 91 L618 84 L646 80 L674 84 L702 88 L720 94 L720 168 L702 164 L674 160 L646 155 L618 151 L590 148 L562 151 L534 158 L506 164 L478 169 L450 172 Z"/>
+              <path class="chart-line-secondary" d="M450 145 L478 141 L506 136 L534 130 L562 124 L590 120 L618 116 L646 112 L674 119 L702 126 L720 135"/>
+              <path class="chart-line" d="M58 136 L86 128 L114 151 L142 119 L170 110 L198 143 L226 132 L254 101 L282 116 L310 126 L338 92 L366 112 L394 130 L422 98 L450 145"/>
+              <circle class="chart-dot" cx="618" cy="116" r="5"/>
+              <rect class="chart-callout" x="544" y="52" width="150" height="38" rx="7"/>
+              <text class="chart-callout-text" x="556" y="67">Seasonal low flagged</text>
+              <text class="chart-callout-text" x="556" y="80">July · ~+400 basis pts</text>
+              <text class="chart-axis" x="52" y="235">Jan</text><text class="chart-axis" x="162" y="235">Mar</text>
+              <text class="chart-axis" x="272" y="235">May</text><text class="chart-axis" x="382" y="235">Jul</text>
+              <text class="chart-axis" x="492" y="235">Sep</text><text class="chart-axis" x="602" y="235">Nov</text>
+              <text class="chart-axis" x="691" y="235">Forecast</text>
+              <text class="chart-axis" x="13" y="52">600</text><text class="chart-axis" x="13" y="109">500</text>
+              <text class="chart-axis" x="13" y="166">400</text><text class="chart-axis" x="13" y="223">300</text>
+            </svg>
+            <p class="chart-footnote">Illustrative visual based on the case-study methodology; forecast uncertainty is intentionally shown rather than presenting a single point estimate.</p>
+          </div>
 
         <div class="project-result">
 
